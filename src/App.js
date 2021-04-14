@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { interval } from "rxjs";
 import DisplayComponent from "./components/DisplayComponent";
 import BtnComponent from "./components/BtnComponent";
+import { BrowserRouter } from "react-router-dom";
 import "./App.css";
 
 function App() {
@@ -53,20 +54,22 @@ function App() {
   };
 
   return (
-    <div className="main-section">
-      <div className="clock-holder">
-        <div className="stopwatch">
-          <DisplayComponent time={time} />
-          <BtnComponent
-            start={start}
-            stop={stop}
-            wait={wait}
-            reset={reset}
-            status={status}
-          />
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <div className="main-section">
+        <div className="clock-holder">
+          <div className="stopwatch">
+            <DisplayComponent time={time} />
+            <BtnComponent
+              start={start}
+              stop={stop}
+              wait={wait}
+              reset={reset}
+              status={status}
+            />
+          </div>
         </div>
       </div>
-    </div>
+    </BrowserRouter>
   );
 }
 
