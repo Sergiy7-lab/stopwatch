@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { interval } from "rxjs";
 import DisplayComponent from "./components/DisplayComponent";
 import BtnComponent from "./components/BtnComponent";
 import "./App.css";
